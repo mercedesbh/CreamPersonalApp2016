@@ -1,9 +1,31 @@
 <template name="home">
+
+<img src="http://currencyguide.eu/usd-en/100usd_new.png"
+	width="940"
+	height="400">
+
+<div class="{{theColor}}">
 	<h1>Money Manager</h1>
-	Mind Over Money, Boss Up With Your Budget<br>
+	Mind Over Money, Boss Up With Your Budget
+	<!-- I want to create some spaces in here -->
 	{{#if currentUser}}
 		You're logged in.
 	{{else}}
 		You must log in.
-		{{/if}}
+	{{/if}}
+
+	<p>
+	“Impossible is just a big word thrown around by small men who find it easier to live in the world they’ve been given than to explore the power they have to change it. Impossible is not a fact. It’s an opinion. Impossible is not a declaration. It’s a dare. Impossible is potential. Impossible is temporary. Impossible is nothing.” - Muhammad Ali
+	</p>
+
+	<br>
+	Color: {{theColor}}<br>
+	<select class="js-color"> 
+		<option>bg-info</option>
+		<option>bg-warning</option>
+	</select>
+    Counter: {{theCounter}}<br>					 
+    <button class="js-pusher">Push me</button>
+</div>
+
 </template>

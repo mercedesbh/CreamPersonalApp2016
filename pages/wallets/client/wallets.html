@@ -13,8 +13,13 @@
 
 	<ul>
 		{{#each w in wallets}}
-		<li>{{w.name}} has a budget of {{w.budget}}</li>
+		<li>{{w.name}} has a <a href="/wallet/{{w._id}}"> budget </a> of {{w.budget}}
+		</li>
 		<!-- I want to make each of these link to another section of the site for that specific wallet, or drop down into more info the actual page -->
 		{{/each}}
 	</ul>
+</template>
+
+<template name="wallet">
+	{{name}} must ONLY be used to spend {{budget}}
 </template>

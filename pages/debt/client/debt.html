@@ -14,10 +14,10 @@
 		<input type="checkbox" class="js-biweeklydebt">Bi-Weekly,
 		<input type="checkbox" class="js-monthlydebt">Monthly<br>
 	Payment Amount: <input type="text" class="js-paymentamount"><br>
-	<button class="js-addRepaymentPlant">Add Repayment Plan</button>
+	<button class="js-addRepaymentPlan">Add Repayment Plan</button>
 
 	<ul>
-		{{#each d in debt}}
+		{{#each d in debts}}
 		<li>{{d.owed}} will be paid {{d.paymentamount}}</li>
 		<!-- I want to make each of these link to another section of the site for that specific wallet, or drop down into more info the actual page -->
 		{{/each}}

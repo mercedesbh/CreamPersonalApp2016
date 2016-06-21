@@ -1,5 +1,5 @@
-Template.wallets.helpers({
-	debt: function() {
+Template.debt.helpers({
+	debts: function() {
 		return Debt.find();
 	}
 })
