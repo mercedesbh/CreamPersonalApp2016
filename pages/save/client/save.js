@@ -1,5 +1,5 @@
 Template.save.helpers({
-  savingss: function() {
+  savings: function() {
     return Save.find();
   }
 })

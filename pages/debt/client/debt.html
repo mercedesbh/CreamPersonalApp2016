@@ -19,7 +19,7 @@
 
 	<ul>
 		{{#each d in debts}}
-		<li> <a href="/debt/{{d_id}}"> {{d.owed}} </a> will be paid {{d.paymentamount}}</li>
+		<li> <a href="/debts/{{d._id}}"> {{d.owed}} </a> will be paid {{d.paymentamount}}</li>
 		<!-- I want to make each of these link to another section of the site for that specific wallet, or drop down into more info the actual page -->
 		{{/each}}
 	</ul>

@@ -2,8 +2,6 @@ Template.home.onCreated(function() {
 	this.state = new ReactiveDict();
 	this.state.setDefault({
 		color: "bg-info",
-		counter: 0,
-
 	});
 });
 
@@ -13,10 +11,6 @@ Template.home.helpers({
 		return instance.state.get("color");
 		const c = instance.state.get("color");
 		return c;
-	},
-	theCounter: function() {
-		const instance = Template .instance();
-		return instance.state.get("counter");
 	},
 })
 
