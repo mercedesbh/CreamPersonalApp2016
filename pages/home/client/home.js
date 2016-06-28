@@ -27,9 +27,4 @@ Template.home.events ({
 		//change the color field of the state object
 	},
 
-	"click .js-pusher": function(event,instance){
-		const c = instance.state.get("counter");
-		instance.state.get("counter", c+1);
-	}
-
 });

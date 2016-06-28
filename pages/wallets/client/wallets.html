@@ -11,6 +11,8 @@
 	Budget: <input type="text" class="js-budget"><br>
 	<button class="js-addWallet">Add This Wallet</button>
 
+
+
 	<ul>
 		{{#each w in wallets}}
 		<li>{{w.name}} has a <a href="/wallet/{{w._id}}"> budget </a> of {{w.budget}}

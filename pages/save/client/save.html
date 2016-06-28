@@ -1,0 +1,27 @@
+<template name="save">
+  <h5>Will the money be saved in a bank savings account?</h5>
+  {{> form}}
+  <hr>
+  <h5>Is this a new savings account?</h5>
+  {{> form}}
+</template>
+
+<template name="form">
+  <select class="form-control">
+    <option value="no">No</option>
+    <option value="yes">Yes</option>
+  </select>
+  <br>
+  {{#if yes}}
+    <div class="form-group">
+      <label>Name Of Bank</label>
+      <input class=" .js-saveWithBank.form-control" type="text">
+    </div>
+    <div class="form-group">
+      <label>Amount Of Money</label>
+      <input class=" .js-amountToSave.form-control" type="text">
+    </div>
+    <button class="js-addSave">Submit</button>
+  {{/if}}
+</template>
+

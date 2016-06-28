@@ -4,11 +4,12 @@
 
 	Loan Type:
 		<!-- Make these so that people can only choose one. Also, the print line should say (per week, per month, etc.) -->
-		<input type="checkbox" class="js-personal">Personal,
-		<input type="checkbox" class="js-credit">Credit,
-		<input type="checkbox" class="js-bank">Bank,
-		<input type="checkbox" class="js-petty">Petty,
-		<input type="checkbox" class="js-student">Student<br>
+		<input type="checkbox" class="js-personal">Personal 
+		<input type="checkbox" class="js-credit">Credit 
+		<input type="checkbox" class="js-bank">Bank 
+		<input type="checkbox" class="js-petty">Petty 
+		<input type="checkbox" class="js-student">Student 
+		<input type="checkbox" class="js-other">Other<br>
 	Name of Establishment or Individual Owed: <input type="text" class="js-owed"><br>
 	Payment Schedule: <input type="checkbox" class="js-weeklydebt">Weekly,
 		<input type="checkbox" class="js-biweeklydebt">Bi-Weekly,
@@ -18,10 +19,13 @@
 
 	<ul>
 		{{#each d in debts}}
-		<li>{{d.owed}} will be paid {{d.paymentamount}}</li>
+		<li> <a href="/debt/{{d_id}}"> {{d.owed}} </a> will be paid {{d.paymentamount}}</li>
 		<!-- I want to make each of these link to another section of the site for that specific wallet, or drop down into more info the actual page -->
 		{{/each}}
 	</ul>
+</template>
 
 
+<template name="debts">
+	{{owed}} must be paid {{paymentamount}}
 </template>

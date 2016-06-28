@@ -16,6 +16,8 @@ Template.wallets.events({
 		const wallets = 
 		{name:name, budgetspan:[weekly,biweekly,monthly], budget:budget}
 		console.dir(wallets);
-		Budget.insert(wallets)
-	}
+		//Budget.insert(wallets)
+		Meteor.call("insertBudget", wallets);
+	},
+
 })
