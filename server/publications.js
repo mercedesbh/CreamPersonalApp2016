@@ -11,7 +11,13 @@ Meteor.publish("theSave",
 	function(){return Save.find();})
 
 Meteor.publish("theSettings",
-	function(){return Settings.find();})
+	function() {
+		if (! this.userId) {
+			return Meteor.ready()
+		} else {
+		return Settings.find({userId:this.userId});
+		}
+});
 
 Meteor.publish("userData", function () {
    if (this.userId) { // only if you log in can you see it

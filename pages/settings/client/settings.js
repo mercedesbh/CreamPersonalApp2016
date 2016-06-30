@@ -1,6 +1,14 @@
+//Template.settings.helpers({
+//	setting: function() {
+//		const c = Settings.find().fetch();
+//		console.dir(c);
+//		return Settings.find();
+//	}
+//})
+
 Template.settings.helpers({
-	setting: function() {
-		return Settings.find();
+	username: function() {
+		return Settings.find().fetch()[0].username;
 	}
 })
 

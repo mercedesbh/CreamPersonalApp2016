@@ -26,3 +26,17 @@ Template.home.events ({
 	},
 
 });
+
+Template.home.events({
+	"click .js-addUsername": function(event){
+		console.log("hey you clicked the button")
+		//Read values of input fields and store in values
+		
+		const username = $(".js-username").val();
+		
+		const home = 
+		{username:username}
+		console.dir(home);
+		Meteor.call("insertHome", home);
+	}, 
+})
