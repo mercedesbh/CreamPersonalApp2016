@@ -4,9 +4,12 @@
 		<ul class="nav nav-tabs">
 		  <li role="presentation"><a href="{{pathFor 'home'}}">Home</a></li>
 		  <li role="presentation"><a href="{{pathFor 'profiles'}}">Profiles</a></li>
-		  <li role="presentation"><a href="{{pathFor 'myprofiles'}}">MyProfiles</a></li>
+		  <li role="presentation"><a href="{{pathFor 'myprofile'}}">MyProfile</a></li>
 				{{> loginButtons}}
 		</ul>
+
+	<h1>C.R.E.A.M.</h1>
+	{{> yield}}
 
 	</div>
 </template>

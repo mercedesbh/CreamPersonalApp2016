@@ -1,5 +1,8 @@
 <template name="myprofile">
 	<h1>My Profile</h1>
+
+{{#if currentUser}}
+
 	<h2>Tell us about yourself!</h2>
 
 	First Name: <input type="text" class="js-firstname"><br>
@@ -8,5 +11,11 @@
 	Email: <input type="text" class="js-email"><br>
 	Birth Year: <input type="text" class="js-birthyear"><br>
 	<button class="js-addInfo">Add Info</button>
+	<br>
+	<br>
+
+{{else}}
+	<h2>You must log in to edit your profile!</h2>
+{{/if}}
 
 </template>

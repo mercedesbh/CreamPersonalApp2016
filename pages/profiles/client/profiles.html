@@ -2,5 +2,16 @@
 	<h1>Profiles</h1>
 	
 	<h2>All Uploaded Profiles</h2>
+
+	{{#each l in listprofiles}}
+		{{l.listprofiles}}
+	{{/each}}
+	<br>
+
+	{{#if currentUser}}
+		You're logged in.
+	{{else}}
+		You must log in.
+	{{/if}}
 	
 </template>
