@@ -1,26 +1,8 @@
-Meteor.publish("theBudget",
-	function(){return Budget.find();})
+Meteor.publish("theProfiles",
+	function(){return Profiles.find();})
 
-Meteor.publish("theComments",
-	function(){return Comments.find();})
-
-Meteor.publish("theDebt`",
-	function(){return Debt.find();})
-
-Meteor.publish("theSave",
-	function(){return Save.find();})
+Meteor.publish("theMyprofile",
+	function(){return Myprofile.find();})
 
 Meteor.publish("theSettings",
 	function(){return Settings.find();})
-
-Meteor.publish("userData", function () {
-   if (this.userId) { // only if you log in can you see it
-  	  //return Meteor.users.find({}); // everyone sees everything!
-                               //{fields: {'profile': 1, 'things': 1}});
-      return Meteor.users.find({_id: this.userId},
-                               {fields:{profile:1,
-                                        "services.google.email":1}});
-    } else {
-      this.ready();
-    }
-  });
