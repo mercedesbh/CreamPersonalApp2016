@@ -8,14 +8,22 @@
 		  <li role="presentation"><a href="{{pathFor 'wallets'}}">Wallets</a></li>
 		  <li role="presentation"><a href="{{pathFor 'debt'}}">Debt</a></li>
 		  <li role="presentation"><a href="{{pathFor 'save'}}">Save</a></li>
-		  <li role="presentation"><a href="{{pathFor 'testing'}}">Testing</a></li>
-		  <li role="presentation"><a href="{{pathFor 'quiz1'}}">quiz1</a></li>
-			<li>
 				{{> loginButtons}}
-			</li>
 		</ul>
+
+		<div class="btn-group dropup">
+		  <button type="button" class="btn btn-default">Settings</button>
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    <span class="caret"></span>
+		    <span class="sr-only">Toggle Dropdown</span>
+		  </button>
+		  <ul class="dropdown-menu">
+		    <li role="presentation"><a href="{{pathFor 'settings'}}">Edit My Settings</a></li>
+		  </ul>
+		</div>
 
 	<h1>C.R.E.A.M.</h1>
 	{{> yield}}
+
 	</div>
 </template>

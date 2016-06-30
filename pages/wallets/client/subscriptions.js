@@ -1,2 +1,3 @@
-//Meteor.subscribe("theBudget");
-Meteor.subscribe("theBudgetLimited","BofA")
+Meteor.subscribe("theBudget");
+//Meteor.subscribe("accountsWithName", "Bank Of America");
+

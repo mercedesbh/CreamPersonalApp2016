@@ -12,6 +12,10 @@ Template.home.helpers({
 		const c = instance.state.get("color");
 		return c;
 	},
+	theCounter: function() {
+		const instance = Template .instance();
+		return instance.state.get("counter");
+	},
 })
 
 Template.home.events ({

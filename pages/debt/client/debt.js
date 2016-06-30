@@ -24,5 +24,5 @@ Template.debt.events({
 		console.dir(debt);
 		//Debt.insert(debt)
 		Meteor.call("insertDebt", debt);
-	}
+	}, 
 })

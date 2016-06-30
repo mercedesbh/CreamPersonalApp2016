@@ -24,13 +24,12 @@ Template.form.events({
   }
 });
 
-
 Template.save.events({
   "click .js-addSave": function(event){
     console.log("hey you clicked the button")
     //Read values of input fields and store in values
-    const nameOfSavingsBank = $(" .js-saveWithBank.form-control").val();
-    const savingsAmount = $(" .js-amountToSave.form-control").val();
+    const nameOfSavingsBank = $(" .js-saveWithBank").val();
+    const savingsAmount = $(" .js-amountToSave").val();
     
     const save = 
     {nameOfSavingsBank:nameOfSavingsBank, savingsAmount:savingsAmount}

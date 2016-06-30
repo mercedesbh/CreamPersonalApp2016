@@ -16,6 +16,10 @@ Meteor.methods({
 	Comments.insert(comment_obj)
 	},
 
+	insertSettings: function(username) {
+	Settings.insert(username)
+	},
+
 	sayhiserver: function() {
 		console.log("hi!");
 	},

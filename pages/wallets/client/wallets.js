@@ -20,4 +20,13 @@ Template.wallets.events({
 		Meteor.call("insertBudget", wallets);
 	},
 
+	"click .js-name": function(event){
+		console.log(event);
+		event.preventDefault();
+		console.log("entered data");
+		const v = $(".js-name").val();
+		console.log(v)
+		Meteor.subscribe("accountsWithName", v);
+	}
+
 })
