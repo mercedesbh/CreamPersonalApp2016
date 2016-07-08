@@ -14,7 +14,7 @@ body {
 
 #header {
   background-color: #D9492A;
-  color: #5C0C0C;
+  color: 2D503A;
   text-align: center;
 }
 
@@ -30,5 +30,12 @@ body {
   list-style-type: none;
   text-align: left;
   padding: 0;
-  color: black;
+  color: #2D503A;
+}
+
+#list2 ul {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+  color: #2D503A;
 }

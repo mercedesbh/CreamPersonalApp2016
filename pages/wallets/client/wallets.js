@@ -1,7 +1,7 @@
 Template.wallets.helpers({
 	wallets: function() {
 		return Budget.find();
-	}
+	},
 })
 
 Template.wallets.events({
@@ -13,20 +13,33 @@ Template.wallets.events({
 		const biweekly = $(".js-biweekly").val();
 		const monthly = $(".js-monthly").val();
 		const budget = $(".js-budget").val();
-		const wallets = 
+		const wallets =
 		{name:name, budgetspan:[weekly,biweekly,monthly], budget:budget}
 		console.dir(wallets);
 		//Budget.insert(wallets)
 		Meteor.call("insertBudget", wallets);
 	},
+})
 
-	"click .js-name": function(event){
-		console.log(event);
-		event.preventDefault();
-		console.log("entered data");
-		const v = $(".js-name").val();
-		console.log(v)
-		Meteor.subscribe("accountsWithName", v);
-	}
+Template.wallet.events({
+	"click .js-addTransaction": function(event){
+		console.log("hey you clicked the button")
+		//Read values of input fields and store in values
+		const item = $(".js-item").val();
+		const totalcost = $(".js-totalcost").val();
+		const paymenttype = $(".js-paymenttype").val();
+		const datebought = $(".js-datebought").val();
+		const wallet =
+		{item, totalcost, paymenttype, datebought}
+		console.dir(wallet);
+		Meteor.call("insertTransaction", wallet);
+	},
+})
 
+Template.wallets.events({
+	"click .js-delete-wallet": function(event){
+		console.log("clicked on the x");
+		console.dir(this);
+		Budget.remove(this.wallet._id);
+	},
 })

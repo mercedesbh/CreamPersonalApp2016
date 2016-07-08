@@ -5,21 +5,22 @@ Template.save.helpers({
 })
 
 Template.form.onCreated(function(){
-  this.yes = new ReactiveVar( false );
+  this.templateDictionary = new ReactiveDict();
+  this.templateDictionary.set('yes', false);
 });
 
 Template.form.helpers({
   yes: function() {
-    return Template.instance().yes.get();
-  }
+    return Template.instance().templateDictionary.get('yes');
+  },
 });
 
 Template.form.events({
   'change select': function( event, template ) {
     if ( $( event.target ).val() === "yes" ) {
-      template.yes.set( true );
+      template.templateDictionary.set( 'yes', true );
     } else {
-      template.yes.set( false );
+      template.templateDictionary.set( 'yes', false );
     }
   }
 });
@@ -30,8 +31,8 @@ Template.save.events({
     //Read values of input fields and store in values
     const nameOfSavingsBank = $(" .js-saveWithBank").val();
     const savingsAmount = $(" .js-amountToSave").val();
-    
-    const save = 
+
+    const save =
     {nameOfSavingsBank:nameOfSavingsBank, savingsAmount:savingsAmount}
     console.dir(save);
     Meteor.call("insertSave", save);
