@@ -19,6 +19,9 @@ Meteor.publish("theSettings",
 		}
 });
 
+Meteor.publish("theBios",
+	function(){return bios.find();})
+
 Meteor.publish("userData", function () {
    if (this.userId) { // only if you log in can you see it
   	  //return Meteor.users.find({}); // everyone sees everything!

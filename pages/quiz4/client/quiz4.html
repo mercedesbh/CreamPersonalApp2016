@@ -1,0 +1,36 @@
+<template name="quiz4">
+
+<h1>Quiz 4</h1>
+by Mercedes Hall
+
+    <div class="row">
+       <div class="col-md-6 bg-info">
+         <form>
+           Name: <input type="text" class="js-bioname"><br>
+           Bio: <textarea class=js-biopar ROW=5></textarea><br>
+           <button class="js-updatebio">Update Bio</button>
+         </form>
+       </div>
+
+       <div class="col-md-6 bg-warning">
+         <h2>or select a bio to view</h2>
+         <ul>
+           <li>
+        		 {{#each q in quiz4}}
+        				 <li> <a href="/quizz/{{q._id}}"> {{q.bioname}} </a>
+        				 </li>
+        		 {{/each}}
+        	 </li>
+         </ul>
+       </div>
+
+    </div>
+
+</template>
+
+<template name="quizz">
+  <div class="jumbotron">
+    <h1>bioname</h1>
+    <p>{{biopar}}</p>
+  </div>
+</template>
