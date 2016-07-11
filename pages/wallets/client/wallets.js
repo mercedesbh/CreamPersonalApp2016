@@ -21,6 +21,10 @@ Template.wallets.events({
 	},
 })
 
+Template.wallet.helpers({
+	wallet: function(){return Transaction.find();}
+});
+
 Template.wallet.events({
 	"click .js-addTransaction": function(event){
 		console.log("hey you clicked the button")

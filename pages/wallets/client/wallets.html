@@ -1,19 +1,5 @@
 <template name="wallets">
 
-	<head>
-		<title>Your Wallets</title>
-		<link rel="stylesheet" type="text/class" href="style.css" />
-	</head>
-
-	<!-- <style>
-	.jumbotron {
-		background-color:red
-		color:black;
-	}
-</style> -->
-
-	<body>
-		<div id= "container">
 
 			<div id="header">
 				<h1> Your Wallets</h1>
@@ -46,8 +32,7 @@
 					{{/if}}
 
 			</div>
-		</div>
-	</body>
+
 
 	<div id= "list">
 	 <ul>
@@ -77,7 +62,7 @@
 	<div id= "list2">
 	 <ul>
 		 {{#each w in wallet}}
-				 <li>{{w.name}} was used to make a transaction totaling {{w.totalcost}} on {{datebought}}.
+				 <li>{{w.item}} was used to make a transaction totaling {{w.totalcost}} on {{datebought}}.
 					 Payment Method: {{paymenttype}}
 
 					 <span class="js-delete-wallet glyphicon glyphicon-remove" aria-hidden="true">

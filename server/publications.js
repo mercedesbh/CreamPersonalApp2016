@@ -4,8 +4,15 @@ Meteor.publish("theBudget",
 Meteor.publish("theComments",
 	function(){return Comments.find();})
 
-Meteor.publish("theDebt`",
-	function(){return Debt.find();})
+Meteor.publish("theDebt",
+	function(){
+		const debts = Debt.find();
+	  console.log(debts.count());
+	  return debts;
+	})
+
+Meteor.publish("theTransaction",
+	function(){return Transaction.find();})
 
 Meteor.publish("theSave",
 	function(){return Save.find();})
