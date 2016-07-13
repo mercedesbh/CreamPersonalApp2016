@@ -48,7 +48,7 @@
 
 <template name="wallet">
 	<h3>
-		{{name}} must ONLY be used to spend {{budget}}
+		{{w.name}} must ONLY be used to spend {{w.budget}}
 	</h3>
 	<div>
 		<p>Transactions from wallet: {{name}}</p>
@@ -62,7 +62,7 @@
 	<div id= "list2">
 	 <ul>
 		 {{#each w in wallet}}
-				 <li>{{w.item}} was used to make a transaction totaling {{w.totalcost}} on {{datebought}}.
+				 <li>{{w.name}} was used to make a transaction totaling {{w.totalcost}} on {{datebought}}.
 					 Payment Method: {{paymenttype}}
 
 					 <span class="js-delete-wallet glyphicon glyphicon-remove" aria-hidden="true">
