@@ -2,7 +2,16 @@ Meteor.publish("theBudget",
 	function(){return Budget.find();})
 
 Meteor.publish("theComments",
-	function(){return Comments.find();})
+	function(){
+		const commentsdata = Comments.find();
+		return commentsdata;
+	})
+
+Meteor.publish("theSpeech",
+	function(){
+		const speechdata = Speech.find();
+		return speechdata;
+	})
 
 Meteor.publish("theDebt",
 	function(){

@@ -1,74 +1,74 @@
 <template name="wallets">
 
 
-			<div id="header">
-				<h1> Your Wallets</h1>
-			</div>
-
-			<div id ="content">
-
-				<div class= "jumbotron jumbotron-success" id= "paragraph">
-					<p>It's time to keep track of your spending!
-							Camp CREAM beleives in organizing the way we spend
-						 	money by documenting the purchases and transactions, ensuring
-							accountability. For each budget category, you'll want to create
-							a new wallet. For example, you might create a wallet for food
-							or clothing. You can always refer back to your wallets
-							or edit them as necessary.</p>
-				</div>
-
-					{{#if currentUser}}
-						<h3>Create a New Wallet</h3>
-							Name: <input type="text" class="js-name"><br>
-							Budget Span:
-							<!-- Make these so that people can only choose one. Also, the print line should say (per week, per month, etc.) -->
-								<input type="checkbox" class="js-weekly">Weekly,
-								<input type="checkbox" class="js-biweekly">Bi-Weekly,
-								<input type="checkbox" class="js-monthly">Monthly<br>
-							Budget: <input type="text" class="js-budget"><br>
-							<button class="js-addWallet">Add This Wallet</button>
-					{{else}}
-						<h2>You must log in to create and view wallets</h2>
-					{{/if}}
-
-			</div>
-
-
-	<div id= "list">
-	 <ul>
-		 {{#each w in wallets}}
-				 <li>{{w.name}} has a <a href="/wallet/{{w._id}}"> budget </a> of {{w.budget}}
-					 <span class="js-delete-wallet glyphicon glyphicon-remove" aria-hidden="true">
-					 </span>
-				 </li>
-		 {{/each}}
-	 </ul>
- 	</div>
-</template>
-
-<template name="wallet">
-	<h3>
-		{{w.name}} must ONLY be used to spend {{w.budget}}
-	</h3>
-	<div>
-		<p>Transactions from wallet: {{name}}</p>
-		Item: <input type="text" class="js-item"><br>
-		Total Cost of Item: <input type="text" class="js-totalcost"><br>
-		Payment Method(Credit, Debit,Cash,Etc): <input type="text" class="js-paymenttype"><br>
-		Date (dd/mm/yyyy):<input type="text" class="js-datebought"><br>
-		<button class="js-addTransaction">Add Transaction</button>
+	<div id="header">
+		<h1> Your Wallets</h1>
 	</div>
 
-	<div id= "list2">
-	 <ul>
-		 {{#each w in wallet}}
-				 <li>{{w.name}} was used to make a transaction totaling {{w.totalcost}} on {{datebought}}.
-					 Payment Method: {{paymenttype}}
+	<div id ="content">
 
-					 <span class="js-delete-wallet glyphicon glyphicon-remove" aria-hidden="true">
-					 </span>
-				 </li>
-		 {{/each}}
-	 </ul>
- 	</div>
-</template>
+		<div class= "jumbotron jumbotron-success" id= "paragraph">
+			<p>It's time to keep track of your spending!
+				Camp CREAM beleives in organizing the way we spend
+				money by documenting the purchases and transactions, ensuring
+				accountability. For each budget category, you'll want to create
+				a new wallet. For example, you might create a wallet for food
+				or clothing. You can always refer back to your wallets
+				or edit them as necessary.</p>
+			</div>
+
+			{{#if currentUser}}
+			<h3>Create a New Wallet</h3>
+			Name: <input type="text" class="js-name"><br>
+			Budget Span:
+			<!-- Make these so that people can only choose one. Also, the print line should say (per week, per month, etc.) -->
+			<input type="checkbox" class="js-weekly">Weekly,
+			<input type="checkbox" class="js-biweekly">Bi-Weekly,
+			<input type="checkbox" class="js-monthly">Monthly<br>
+			Budget: <input type="text" class="js-budget"><br>
+			<button class="js-addWallet">Add This Wallet</button>
+			{{else}}
+			<h2>You must log in to create and view wallets</h2>
+			{{/if}}
+
+		</div>
+
+
+		<div id= "list">
+			<ul>
+				{{#each w in wallets}}
+				<li>{{w.name}} has a <a href="/wallet/{{w._id}}"> budget </a> of {{w.budget}}
+					<span class="js-delete-wallet glyphicon glyphicon-remove" aria-hidden="true">
+					</span>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</template>
+
+	<template name="wallet">
+		<h3>
+			{{w.name}} must ONLY be used to spend {{w.budget}}
+		</h3>
+		<div>
+			<p>Transactions from wallet: {{name}}</p>
+			Item: <input type="text" class="js-item"><br>
+			Total Cost of Item: <input type="text" class="js-totalcost"><br>
+			Payment Method(Credit, Debit,Cash,Etc): <input type="text" class="js-paymenttype"><br>
+			Date (dd/mm/yyyy):<input type="text" class="js-datebought"><br>
+			<button class="js-addTransaction">Add Transaction</button>
+		</div>
+
+		<div id= "list2">
+			<ul>
+				{{#each w in wallet}}
+				<li>{{w.name}} was used to make a transaction totaling {{w.totalcost}} on {{datebought}}.
+					Payment Method: {{paymenttype}}
+
+					<span class="js-delete-wallet glyphicon glyphicon-remove" aria-hidden="true">
+					</span>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</template>
