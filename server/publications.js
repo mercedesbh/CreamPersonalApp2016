@@ -7,6 +7,9 @@ Meteor.publish("theComments",
 		return commentsdata;
 	})
 
+	Meteor.publish("theReviews",
+		function(){return Reviews.find();})
+
 Meteor.publish("theSpeech",
 	function(){
 		const speechdata = Speech.find();

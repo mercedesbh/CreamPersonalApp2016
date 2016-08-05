@@ -1,0 +1,147 @@
+<template name="quiz23">
+
+  <header>Second Makeup</header>
+
+	<div class="jumbotron">
+      <h1>JBS Showcase Reviews</h1>
+      Give feedback to the teams!
+  </div>
+
+  {{#if currentUser}}
+  {{> reviewForm}}
+
+  <h1>Reviews</h1>
+    Show feedback for:
+  <select class="js-sort">
+    <option value="allgroups">All</option>
+    <option value="group1">TraWorld</option>
+    <option value="group2">Talkboard</option>
+    <option value="group3">ChefsAssistant</option>
+    <option value="group4">Epoch</option>
+    <option value="group5">VirtualPet</option>
+    <option value="group6">PlanDeis</option>
+  </select>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Reviewer</th>
+        <th>Reviewee</th>
+        <th>Rating</th>
+        <th>Comment</th>
+        <th>delete?</th>
+      </tr>
+    </thead>
+  {{#each r in reviews}}
+    <tbody>
+  {{> reviewTable r=r}}
+    </tbody>
+  {{/each}}
+    </table>
+  {{/if}}
+
+</template>
+
+<template name="reviewTable">
+	 <tr>
+     <td>{{r.name}} </td>
+     <td>{{r.team}}</td>
+     <td>{{r.rating}} </td>
+     <td>{{r.comment}}</td>
+     <td>
+       <span class="js-delete-comment glyphicon glyphicon-remove" aria-hidden="true">
+       </span>
+     </td>
+   </tr>
+</template>
+
+<template name="reviewForm">
+  <h1>Provide Feedback</h1>
+Team being reviewed:
+  <select class="js-team">
+    <option>All</option>
+    <option>TraWorld</option>
+    <option>TalkBoard</option>
+    <option>ChefsAssistant</option>
+    <option>Epoch</option>
+    <option>VirtualPet</option>
+    <option>PlanDeis</option>
+  </select>
+  <br>
+  Name of Reviewer: <input type="text" class="js-name"><br>
+  Rating (1=lo,5=hi):
+  <select class="js-rating-review">
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+	</select>
+  <br>
+  Give some feedback here: <br>
+  <textarea class="js-feedbackBox" rows="5" cols="60"></textarea> <br>
+  <button type= "button" class="js-submit-feedback" id= "js-submit">Submit Feedback</button>
+</template>
+
+
+
+  <!-- <div class="{{Team}}">
+  {{theCandidate}}<br>
+	<select class="js-candidate">
+		<option>Hillary</option>
+		<option>Donald</option>
+	</select>
+  </div>
+
+  <br>
+  Your name: <input type="text" class="js-yourname"><br>
+  Amount: <input type="text" class="js-youramount"><br>
+  <button class="js-reportDonation">Report Donation</button>
+
+  <div>
+    <ul>
+      {{#each d in donations}}
+      <li>{{d.yourname}} gave {{d.youramount}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+ <head>
+   <title>Donations</title>
+</head>
+
+<body>
+<div class="container">
+  <h2>Donations</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Donor</th>
+        <th>For Whom</th>
+        <th>When</th>
+        <th>Amount</th>
+        <th>Delete?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+      </tr>
+      <tr>
+
+      </tr>
+      <tr>
+
+      </tr>
+      <tr>
+
+      </tr>
+      <tr>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body> -->
